@@ -46,7 +46,7 @@ const Profile = () => {
     navigate(`/stock/${symbol}`);
   };
   return (
-    <Layout title={"Tradding page"}>
+    <Layout title={"Thông tin cá nhân"}>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Box style={{ marginTop: "100px" }} sx={{ display: 'flex', flexDirection: 'row', width: "70%" }}>
           <Grid container>

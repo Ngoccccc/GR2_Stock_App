@@ -41,7 +41,7 @@ const HistoryTransaction = () => {
     }, [auth?.token]);
     console.log(auth);
     return (
-        <Layout title={"HistoryTransaction"}>
+        <Layout title={"Lịch sử giao dịch"}>
             <div style={{ marginTop: 100, display: 'flex', justifyContent: 'center' }} sx={{ justifyContent: 'center', alignItems: 'center' }}>
                 {transaction.length === 0 ? "Loading" : <TableContainer component={Paper} sx={{ maxWidth: 800 }}>
                     <Table sx={{ minWidth: 650, maxWidth: 800 }} aria-label="simple table">

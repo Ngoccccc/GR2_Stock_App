@@ -33,6 +33,7 @@ const Trade = () => {
     const [matchPrice, setMatchPrice] = useState(0);
     const getTodayPrice = async () => {
         try {
+            console.log(axios.defaults.headers);
             const { data } = await axios.get(`/api/v1/market/getAll`);
             console.log(data);
             setBuyStocks(data.data)
@@ -44,16 +45,8 @@ const Trade = () => {
 
     const getOrder = async () => {
         try {
-            const sell = await axios.get(`/api/v1/trade/getSellOrder/`, {
-                headers: {
-                    Authorization: `Bearer ${auth.token}`
-                }
-            });
-            const buy = await axios.get(`/api/v1/trade/getBuyOrder/`, {
-                headers: {
-                    Authorization: `Bearer ${auth.token}`
-                }
-            });
+            const sell = await axios.get(`/api/v1/trade/getSellOrder/`,);
+            const buy = await axios.get(`/api/v1/trade/getBuyOrder/`,);
             const sellOrders = sell.data.map((stock) => ({ ...stock, type: "sell" }))
             const buyOrders = buy.data.map((stock) => ({ ...stock, type: "buy" }))
             const orders = [...sellOrders, ...buyOrders]
@@ -184,7 +177,7 @@ const Trade = () => {
         }
     }
     return (
-        <Layout title={"Tradding page"}>
+        <Layout title={"Đặt lệnh"}>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Box style={{ marginTop: "100px" }} sx={{ display: 'flex', flexDirection: 'row', width: "70%" }}>
                     <Grid container>
